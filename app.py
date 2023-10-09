@@ -17,7 +17,7 @@ ABS_PATH: str = os.path.dirname(os.path.abspath(__file__))
 DB_DIR: str = os.path.join(ABS_PATH, "db")
 st.set_page_config(layout="wide")
 
-device = torch.device('cpu')
+
 
 @st.cache_resource
 def qa_llm():
@@ -29,7 +29,7 @@ def qa_llm():
     
     
     embeddings = SentenceTransformerEmbeddings(model_name="./model/all-MiniLM-L6-v2",
-                                               model_kwargs={'device': device})
+                                               model_kwargs={'device': 'cpu'})
     db = Chroma(persist_directory=DB_DIR, embedding_function = embeddings)
     retriever = db.as_retriever()
     qa = RetrievalQA.from_chain_type(

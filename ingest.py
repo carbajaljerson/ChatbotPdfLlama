@@ -34,7 +34,7 @@ def main():
     
     
     print("splitting into chunks")
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=100, length_function=len)
     texts = text_splitter.split_documents(documents)
     #create embeddings here
     print("Loading sentence transformers model")
