@@ -57,8 +57,11 @@ py ingest.py
 
 ## Para usar el modelo se necesita setear una variable y luego clonar:
 ```sh
-GIT_LFS_SKIP_SMUDGE=1
-git clone https://huggingface.co/MBZUAI/LaMini-T5-738M
+
+wget https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q4_0.bin
+
+git lfs install
+git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
 ```
 
 ## Ejecutar chatbot application en Streamlit:
