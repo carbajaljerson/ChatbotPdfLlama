@@ -65,6 +65,6 @@ git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
 ```
 
 ## Ejecutar chatbot application en Streamlit:
-```sh
-streamlit run main.py -w
+```bash
+streamlit run app.py
 ```
